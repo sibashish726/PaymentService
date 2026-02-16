@@ -1,13 +1,13 @@
-package com.example.config;
+package com.example.payment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShoppingCartConfigServer1Application {
+public class PaymentServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ShoppingCartConfigServer1Application.class, args);
+		SpringApplication.run(PaymentServiceApplication.class, args);
 	}
 
 }
