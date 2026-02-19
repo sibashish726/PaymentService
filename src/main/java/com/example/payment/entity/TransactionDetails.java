@@ -29,7 +29,7 @@ public class TransactionDetails {
   private String referenceNumber;
   
   @Column(name="PAYMENT_DATE")
-  private Instant paymentDate; // Renamed for clarity
+  private Instant paymentDate; 
   
   @Column(name="PAYMENT_STATUS")
   private String paymentStatus;
