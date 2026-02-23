@@ -5,6 +5,7 @@ import java.time.Instant;
 import org.springframework.stereotype.Service;
 
 import com.example.payment.entity.TransactionDetails;
+import com.example.payment.exception.CustomException;
 import com.example.payment.model.PaymentMode;
 import com.example.payment.model.PaymentRequest;
 import com.example.payment.model.PaymentResponse;
@@ -39,7 +40,16 @@ public class PaymentServiceImpl implements PaymentService{
 	@Override
 	public PaymentResponse getPaymentDetailsByOrder(long orderId) {
 		log.info("Payment details for order id : "+orderId);
-		TransactionDetails transactionDetails= paymentServiceRepo.findByOrderId(orderId);
+		TransactionDetails transactionDetails = paymentServiceRepo.findByOrderId(orderId);
+	    
+	    // Manual null check instead of .orElseThrow()
+	    if (transactionDetails == null) {
+	        throw new CustomException(
+	            "Payment details not found for Order ID: " + orderId, 
+	            "PAYMENT_NOT_FOUND", 
+	            404
+	        );
+	    }
 		PaymentResponse paymentResponse= PaymentResponse.builder()
 				                                        .paymentId(transactionDetails.getId())
 				                                        .paymentMode(PaymentMode.valueOf(transactionDetails.getPaymentMode()))
