@@ -3,6 +3,8 @@ package com.example.payment.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.payment.model.PaymentRequest;
+import com.example.payment.model.PaymentResponse;
 import com.example.payment.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 
@@ -36,5 +39,10 @@ public class PaymentController {
 				HttpStatus.OK
 				);
     	
+    }
+    
+    @GetMapping("/getPaymentDetailsByOrder/{orderId}")
+    public ResponseEntity<PaymentResponse> getPaymentDetailsByOrder(@PathVariable long orderId){
+    	return new ResponseEntity<>(paymentService.getPaymentDetailsByOrder(orderId), HttpStatus.OK);
     }
 }
