@@ -1,7 +1,3 @@
-Here is the complete `README.md` for your **PaymentService**, structured exactly like your ProductService example and tailored to the code you provided.
-
------
-
 # PaymentService Microservices
 
 ## Overview
