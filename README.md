@@ -5,7 +5,7 @@
 PaymentService is a core component of the ShoppingCart system responsible for processing transactions and managing payment records. It handles payment creation (processing) and retrieval of payment details linked to specific orders. The system uses MySQL for persistent storage and is designed to be easily portable to other relational databases.
 
 # High Level Design
-![App Dashboard](./HLD3.png)
+![App Dashboard](./HLD4.png)
 
 ## Tech Stack
 
