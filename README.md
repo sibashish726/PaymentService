@@ -7,6 +7,11 @@ PaymentService is a core component of the ShoppingCart system responsible for pr
 # High Level Design
 ![App Dashboard](./HLD4.png)
 
+
+# E2E Design
+![App Dashboard](./spring_microservices_full_architecture.svg)
+
+
 ## Tech Stack
 
   - **Framework:** Spring Boot 3.2.2
